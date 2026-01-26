@@ -1,0 +1,82 @@
+.eligibilitySection {
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 10;
+    margin-top: -40px;
+    /* Overlap with hero slightly? No, design says "Eligibility Bar". A clean bar below hero often looks good. */
+    margin-top: 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+}
+
+.iconWrapper {
+    color: var(--color-primary);
+    background-color: #FEF2F2;
+    /* very light red */
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: var(--color-text-main);
+}
+
+.description {
+    font-size: 14px;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+.separator {
+    width: 1px;
+    height: 60px;
+    background-color: var(--color-border);
+}
+
+.note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-light);
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: var(--color-secondary);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
+    }
+}

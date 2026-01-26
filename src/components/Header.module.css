@@ -1,0 +1,141 @@
+.header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+.logoText {
+    color: var(--color-primary);
+}
+
+.logoSub {
+    color: var(--color-text-main);
+    font-weight: 400;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navLink {
+    color: var(--color-text-main);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--color-primary);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.primaryActionBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 10px 24px;
+    /* Material standard */
+    border-radius: 12px;
+    transition: all 0.2s;
+    box-shadow: var(--shadow-sm);
+}
+
+.primaryActionBtn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.contactBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 8px 20px;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.contactBtn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.loginBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 8px 20px;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.loginBtn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.menuToggle {
+    display: none;
+    color: var(--color-text-main);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .navOpen {
+        display: flex;
+    }
+
+    .adminNav {}
+
+    .menuToggle {
+        display: block;
+    }
+}

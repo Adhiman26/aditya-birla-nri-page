@@ -1,0 +1,39 @@
+.stickyWrapper {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+}
+
+.stickyBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.stickyBtn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-4px);
+}
+
+@media (max-width: 600px) {
+    .stickyWrapper {
+        bottom: 24px;
+        right: 24px;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .stickyBtn {
+        padding: 16px;
+    }
+}

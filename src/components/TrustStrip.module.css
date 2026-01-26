@@ -1,0 +1,52 @@
+.trustStrip {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xxl);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.iconWrapper {
+    color: var(--color-gold);
+}
+
+.value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.divider {
+    width: 1px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .divider {
+        width: 60%;
+        height: 1px;
+    }
+}

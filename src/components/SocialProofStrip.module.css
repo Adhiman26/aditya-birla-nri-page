@@ -1,0 +1,43 @@
+.proofSection {
+    background-color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xxl);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.icon {
+    color: var(--color-gold);
+}
+
+.divider {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-border);
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .divider {
+        display: none;
+    }
+}

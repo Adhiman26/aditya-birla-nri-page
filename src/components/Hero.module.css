@@ -1,0 +1,124 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center 25%;
+    /* Shift focus slightly down to clear heads */
+    /* Shift focus slightly down to clear heads */
+    /* Ensure faces are visible */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Explicitly align to start (left) */
+    color: var(--color-white);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    /* 40-80% black gradient */
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    margin-left: 0;
+    /* reset margin if any */
+    text-align: left;
+    /* Ensure text is left aligned */
+}
+
+.headline {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subheadline {
+    font-size: 20px;
+    margin-bottom: var(--spacing-xl);
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ctaWrapper {
+    display: flex;
+}
+
+.primaryBtn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 14px 32px;
+    /* Material-like padding for large CTA */
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: var(--shadow-md);
+}
+
+.primaryBtn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.trustBadge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-gold);
+    width: fit-content;
+}
+
+.trustValue {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-gold);
+}
+
+.trustLabel {
+    color: var(--color-white);
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 500px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .headline {
+        font-size: 32px;
+    }
+
+    .subheadline {
+        font-size: 18px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.layout {
+    width: 100%;
+}

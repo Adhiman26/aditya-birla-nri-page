@@ -1,0 +1,140 @@
+.repatriationSection {
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+}
+
+.splitLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--spacing-xxl);
+}
+
+.heading {
+    font-size: 36px;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.subText {
+    font-size: 18px;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.iconBox {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flow Diagram Styles for v2.0 */
+.flowCard {
+    background: #FAFAFA;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.flowHeader {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: var(--spacing-xl);
+}
+
+.flowContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.flowStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 120px;
+}
+
+.flowIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.flowIcon.blue {
+    color: #0066CC;
+}
+
+.flowIcon.red {
+    color: var(--color-primary);
+}
+
+.stepLabel {
+    font-size: 14px;
+    color: var(--color-text-main);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.flowArrow {
+    color: var(--color-gold);
+    animation: bounceRight 2s infinite;
+}
+
+.flowNote {
+    color: var(--color-text-light);
+    font-size: 13px;
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+}
+
+@keyframes bounceRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+@media (max-width: 900px) {
+    .splitLayout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}

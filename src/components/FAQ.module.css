@@ -1,0 +1,80 @@
+.faqSection {
+    background-color: var(--color-secondary);
+}
+
+.heading {
+    color: var(--color-primary);
+    font-size: 32px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.item {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+}
+
+.item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.icon {
+    color: var(--color-primary);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.toggleIcon {
+    color: var(--color-text-light);
+}
+
+.body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #FAFAFA;
+}
+
+.content {
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    padding-left: 64px;
+    /* Align with title */
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.open .title {
+    color: var(--color-primary);
+}
