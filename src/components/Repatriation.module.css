@@ -1,64 +1,85 @@
 .repatriationSection {
-    background-color: var(--color-white);
-    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-light);
+    overflow: hidden;
 }
 
 .splitLayout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
     gap: var(--spacing-xxl);
 }
 
+.leftPanel {
+    flex: 1;
+}
+
 .heading {
-    font-size: 36px;
-    color: var(--color-primary);
+    font-size: 2.25rem;
+    color: var(--color-text-main);
     margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
 }
 
 .subText {
-    font-size: 18px;
+    font-size: 1.1rem;
     color: var(--color-text-light);
     margin-bottom: var(--spacing-xl);
-    line-height: 1.6;
+    max-width: 90%;
 }
 
 .featuresGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .featureItem {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1rem;
     color: var(--color-text-main);
 }
 
 .iconBox {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    padding: 8px;
-    border-radius: var(--radius-sm);
+    color: var(--color-primary);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Flow Diagram Styles for v2.0 */
+.paymentNote {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    background-color: rgba(213, 29, 37, 0.05);
+    /* Light red tint */
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--color-primary);
+    max-width: 90%;
+}
+
+.rightPanel {
+    flex: 1;
+}
+
 .flowCard {
-    background: #FAFAFA;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    background-color: var(--color-white);
     padding: var(--spacing-xl);
-    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
     text-align: center;
 }
 
 .flowHeader {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-text-main);
     margin-bottom: var(--spacing-xl);
@@ -67,9 +88,9 @@
 .flowContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: var(--spacing-md);
+    justify-content: space-between;
     margin-bottom: var(--spacing-lg);
+    position: relative;
 }
 
 .flowStep {
@@ -77,64 +98,100 @@
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
-    width: 120px;
+    position: relative;
+    z-index: 2;
 }
 
 .flowIcon {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
+    color: white;
+    box-shadow: var(--shadow-md);
 }
 
-.flowIcon.blue {
-    color: #0066CC;
+.blue {
+    background-color: #2563EB;
 }
 
-.flowIcon.red {
-    color: var(--color-primary);
+.red {
+    background-color: var(--color-primary);
+}
+
+.green {
+    background-color: #10B981;
 }
 
 .stepLabel {
-    font-size: 14px;
-    color: var(--color-text-main);
+    font-size: 0.85rem;
     font-weight: 600;
     line-height: 1.2;
+    color: var(--color-text-main);
 }
 
 .flowArrow {
-    color: var(--color-gold);
-    animation: bounceRight 2s infinite;
+    color: var(--color-text-light);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+.trustSeal {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #E6F4EA;
+    /* Light Green */
+    color: #1E7F46;
+    /* Strong Green */
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid #CEEAD6;
 }
 
 .flowNote {
+    font-size: 0.75rem;
     color: var(--color-text-light);
-    font-size: 13px;
-    font-style: italic;
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--spacing-md);
-}
-
-@keyframes bounceRight {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(4px);
-    }
+    margin-top: var(--spacing-sm);
+    line-height: 1.4;
+    padding: 0 var(--spacing-md);
 }
 
 @media (max-width: 900px) {
     .splitLayout {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: var(--spacing-xl);
+    }
+
+    .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Keep 2 cols on tablet */
+    }
+
+    .paymentNote {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .featuresGrid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .flowContainer {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .flowArrow {
+        transform: rotate(90deg);
     }
 }

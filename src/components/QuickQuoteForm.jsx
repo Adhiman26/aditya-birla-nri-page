@@ -1,76 +1,62 @@
 import React, { useState } from 'react';
-import { X, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import styles from './QuickQuoteForm.module.css';
 
 const QuickQuoteForm = () => {
-    const [isOpen, setIsOpen] = useState(true);
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-    // In a real app, form state handling would be here
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
     };
 
-    if (!isOpen) {
+    if (isSubmitted) {
         return (
-            <button className={styles.minimizedBtn} onClick={() => setIsOpen(true)}>
-                Get a Quote
-            </button>
-        )
+            <div className={styles.card}>
+                <div className={styles.success}>
+                    <h3>Thank you!</h3>
+                    <p>Our expert will contact you shortly to discuss your custom NRI plan.</p>
+                </div>
+            </div>
+        );
     }
 
     return (
-        <div className={styles.container}>
-            {/* Mobile Toggle or Close Button could go here based on design, 
-          keeping it simple for sticky sidebar */}
+        <div className={styles.card}>
             <div className={styles.header}>
-                <h3 className={styles.title}>Quick NRI Quote</h3>
-                <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
-                    <X size={16} />
-                </button>
+                <h3 className={styles.title}>Get a Call Back</h3>
+                <p className={styles.subtitle}>Get a customized plan today.</p>
             </div>
 
-            {!isSubmitted ? (
-                <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.field}>
-                        <label className={styles.label}>Residence Country</label>
-                        <select className={styles.input} required>
-                            <option value="">Select Country</option>
-                            <option value="UAE">UAE</option>
-                            <option value="USA">USA</option>
-                            <option value="UK">UK</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div className={styles.field}>
-                        <label className={styles.label}>Life Cover Needed</label>
-                        <select className={styles.input} required>
-                            <option value="">Select Amount</option>
-                            <option value="50L">₹ 50 Lakhs</option>
-                            <option value="1Cr">₹ 1 Crore</option>
-                            <option value="2Cr">₹ 2 Crores</option>
-                            <option value="5Cr+">₹ 5 Crores+</option>
-                        </select>
-                    </div>
-
-                    <div className={styles.field}>
-                        <label className={styles.label}>Contact (Email/Phone)</label>
-                        <input type="text" className={styles.input} placeholder="Email or Phone" required />
-                    </div>
-
-                    <button type="submit" className={styles.submitBtn}>
-                        Get Quote <ChevronRight size={16} />
-                    </button>
-                </form>
-            ) : (
-                <div className={styles.success}>
-                    <p>Thank you! Our expert will contact you shortly.</p>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <div className={styles.field}>
+                    <input type="text" className={styles.input} placeholder="Name" required />
                 </div>
-            )}
+
+                <div className={styles.phoneGroup}>
+                    <select className={styles.countryCode} defaultValue="+971">
+                         <option value="+91">+91 (IND)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+971">+971 (UAE)</option>
+                        <option value="+65">+65 (SG)</option>
+                    </select>
+                    <input type="tel" className={styles.input} placeholder="Mobile Number" required />
+                </div>
+
+                <div className={styles.field}>
+                    <input type="email" className={styles.input} placeholder="Email ID" required />
+                </div>
+
+                <div className={styles.submitWrapper}>
+                    <button type="submit" className={styles.submitBtn}>
+                        Get a Call Back
+                    </button>
+                    <p className={styles.disclaimer}>
+                        By clicking, you agree to our <a href="#">Privacy Policy</a>.
+                    </p>
+                </div>
+            </form>
         </div>
     );
 };

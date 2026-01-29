@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeftRight, Plane, Globe, Banknote, ArrowRight } from 'lucide-react';
+import { ArrowLeftRight, Plane, Globe, Banknote, ArrowRight, Shield, Undo2, CreditCard, ShieldCheck } from 'lucide-react';
 import styles from './Repatriation.module.css';
 
 const Repatriation = () => {
@@ -23,13 +23,17 @@ const Repatriation = () => {
                         </div>
                         <div className={styles.featureItem}>
                             <div className={styles.iconBox}><Plane /></div>
-                            <span>SWIFT Transfers</span>
+                            <span>SWIFT <br />Transfers</span>
                         </div>
                         <div className={styles.featureItem}>
-                            <div className={styles.iconBox}><ArrowLeftRight /></div>
+                            <div className={styles.iconBox}><CreditCard /></div>
                             <span>International Cards</span>
                         </div>
                     </div>
+
+                    <p className={styles.paymentNote}>
+                        Seamlessly pay premiums using SWIFT transfers from your foreign bank account or use international cards for immediate policy issuance.
+                    </p>
                 </div>
 
                 <div className={styles.rightPanel}>
@@ -43,7 +47,7 @@ const Repatriation = () => {
                                 <div className={`${styles.flowIcon} ${styles.blue}`}>
                                     <Globe size={28} />
                                 </div>
-                                <span className={styles.stepLabel}>Global Currency (USD/AED)</span>
+                                <span className={styles.stepLabel}>Overseas Account<br />(USD/AED)</span>
                             </div>
 
                             {/* Arrow */}
@@ -54,14 +58,32 @@ const Repatriation = () => {
                             {/* Step 2 */}
                             <div className={styles.flowStep}>
                                 <div className={`${styles.flowIcon} ${styles.red}`}>
-                                    <Banknote size={28} />
+                                    <Shield size={28} />
                                 </div>
-                                <span className={styles.stepLabel}>Indian Policy / NRE Account</span>
+                                <span className={styles.stepLabel}>ABSLI Policy<br />(Investment)</span>
+                            </div>
+
+                            {/* Arrow */}
+                            <div className={styles.flowArrow}>
+                                <ArrowRight size={24} />
+                            </div>
+
+                            {/* Step 3 */}
+                            <div className={styles.flowStep}>
+                                <div className={`${styles.flowIcon} ${styles.green}`}>
+                                    <Undo2 size={28} />
+                                </div>
+                                <span className={styles.stepLabel}>Seamless Return<br />Payout</span>
                             </div>
                         </div>
 
+                        <div className={styles.trustSeal}>
+                            <ShieldCheck size={16} />
+                            <span>RBI & FEMA Compliant</span>
+                        </div>
+
                         <div className={styles.flowNote}>
-                            No hassle. Fully repatriable maturity proceeds.*
+                            Repatriation of proceeds, if applicable, is subject to RBI, FEMA, and other regulatory guidelines.
                         </div>
                     </div>
                 </div>

@@ -6,13 +6,13 @@ const Benefits = () => {
     const benefits = [
         {
             icon: <Shield size={32} />,
-            title: 'Financial Protection',
+            title: 'Peace of Mind',
             desc: 'Secure your family with comprehensive life cover.'
         },
         {
             icon: <Coins size={32} />,
-            title: 'Cost-Effective',
-            desc: 'Lower premiums compared to international policies.'
+            title: 'Save up to 50%',
+            desc: 'Lower premiums vs Global Plans.'
         },
         {
             icon: <TrendingUp size={32} />,
@@ -21,17 +21,17 @@ const Benefits = () => {
         },
         {
             icon: <Percent size={32} />,
-            title: 'Tax Benefits',
-            desc: 'Enjoy tax deductions and tax-free payouts*.'
+            title: '100% Tax-Free',
+            desc: 'Full maturity payouts in India*.'
         },
         {
             icon: <IndianRupee size={32} />,
-            title: 'INR Payouts',
-            desc: 'Hassle-free claim settlement in Indian Rupees.'
+            title: 'Guaranteed Repatriation',
+            desc: '1-Click transfer to Foreign Accounts.'
         },
         {
             icon: <Landmark size={32} />,
-            title: 'IRDAI Regulated',
+            title: 'Global Standard',
             desc: 'Highest safety standards and transparency.'
         }
     ];
@@ -39,7 +39,7 @@ const Benefits = () => {
     return (
         <section className={`section-padding ${styles.benefitsSection}`}>
             <div className="container">
-                <h2 className={`text-center ${styles.heading}`}>Why Buy from India?</h2>
+                <h2 className={`text-center ${styles.heading}`}>Why Buy from <span className="text-primary">India?</span></h2>
                 <p className={`text-center ${styles.subheading}`}>Maximize value with Indian Life Insurance plans.</p>
 
                 <div className={styles.grid}>

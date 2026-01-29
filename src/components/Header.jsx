@@ -4,6 +4,20 @@ import styles from './Header.module.css';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showCallExpert, setShowCallExpert] = useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 600) {
+                setShowCallExpert(true);
+            } else {
+                setShowCallExpert(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <header className={styles.header}>
@@ -23,8 +37,15 @@ const Header = () => {
                 </nav>
 
                 <div className={styles.actions}>
-                    <button className={styles.primaryActionBtn}>
+                    {/* Show Call Expert only after scroll */}
+                    <button
+                        className={`${styles.callExpertBtn} ${showCallExpert ? styles.visible : ''}`}
+                    >
                         <Phone size={18} />
+                        <span>Get in Touch</span>
+                    </button>
+
+                    <button className={styles.primaryActionBtn}>
                         <span>Get in Touch</span>
                     </button>
                     <button className={styles.loginBtn}>

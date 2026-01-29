@@ -1,124 +1,132 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 600px;
+    min-height: 600px;
     background-size: cover;
-    background-position: center 25%;
-    /* Shift focus slightly down to clear heads */
-    /* Shift focus slightly down to clear heads */
-    /* Ensure faces are visible */
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    /* Explicitly align to start (left) */
-    color: var(--color-white);
 }
 
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
-    /* 40-80% black gradient */
+    width: 100%;
+    height: 100%;
+    /* Dark gradient on left (60%) to transparent */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
 
-.content {
+.layout {
     position: relative;
     z-index: 10;
-    max-width: 600px;
-    margin-left: 0;
-    /* reset margin if any */
-    text-align: left;
-    /* Ensure text is left aligned */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+}
+
+.leftContent {
+    flex: 1;
+    max-width: 55%;
+    padding-right: var(--spacing-xl);
+}
+
+.rightContent {
+    flex: 0 0 400px;
 }
 
 .headline {
-    font-size: 48px;
+    font-size: 3.5rem;
     line-height: 1.2;
+    color: var(--color-white);
+    /* White Text */
     margin-bottom: var(--spacing-md);
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+    color: var(--color-gold);
+    /* Gold for highlights on dark bg */
+    font-weight: 700;
 }
 
 .subheadline {
-    font-size: 20px;
-    margin-bottom: var(--spacing-xl);
-    font-weight: 400;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    /* White transparent */
+    margin-bottom: var(--spacing-lg);
+    max-width: 90%;
 }
 
-.ctaWrapper {
+.trustBadgesContainer {
     display: flex;
-}
-
-.primaryBtn {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    padding: 14px 32px;
-    /* Material-like padding for large CTA */
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: background-color 0.2s, transform 0.1s;
-    box-shadow: var(--shadow-md);
-}
-
-.primaryBtn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-2px);
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 .trustBadge {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    padding: 8px 16px;
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--color-gold);
-    width: fit-content;
+    flex-direction: column;
 }
 
 .trustValue {
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 20px;
     color: var(--color-gold);
+    /* Gold for visibility on dark */
 }
 
 .trustLabel {
-    color: var(--color-white);
-    font-size: 14px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    /* White for visibility */
+    font-weight: 500;
 }
 
-@media (max-width: 768px) {
+.divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Light divider */
+}
+
+@media (max-width: 968px) {
     .hero {
-        height: 500px;
-        justify-content: center;
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .layout {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .leftContent {
+        max-width: 100%;
         text-align: center;
-    }
-
-    .overlay {
-        background: rgba(0, 0, 0, 0.6);
-    }
-
-    .headline {
-        font-size: 32px;
+        padding-right: 0;
     }
 
     .subheadline {
-        font-size: 18px;
+        margin: 0 auto var(--spacing-lg);
     }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .trustBadgesContainer {
+        justify-content: center;
     }
-}
-.layout {
-    width: 100%;
+
+    .rightContent {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .headline {
+        font-size: 2.5rem;
+    }
 }

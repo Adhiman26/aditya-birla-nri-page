@@ -30,6 +30,26 @@ const FAQLayout = () => {
             title: "What is the claim settlement process for NRIs?",
             icon: <HelpCircle size={24} />,
             content: "The process is fully digital. Nominees can upload documents online. For death claims, the claim amount can be repatriated to the nominee's account subject to FEMA guidelines."
+        },
+        {
+            title: "What happens if I return to India later?",
+            icon: <HelpCircle size={24} />,
+            content: "Your policy continues as per terms and conditions, irrespective of your residential status."
+        },
+        {
+            title: "Can I nominate a resident Indian?",
+            icon: <HelpCircle size={24} />,
+            content: "Yes, you can nominate a resident Indian. The claim proceeds will be paid to the nominee in Indian Rupees as per the policy terms."
+        },
+        {
+            title: "What is the grace period for premium payment?",
+            icon: <HelpCircle size={24} />,
+            content: "A grace period of 15 to 30 days is typically offered for premium payments, depending on the premium payment mode and policy frequency."
+        },
+        {
+            title: "Are there any GST benefits for NRIs?",
+            icon: <HelpCircle size={24} />,
+            content: "Yes, premiums paid through an NRE account are eligible for an 18% GST waiver, as they are treated as export of services."
         }
     ];
 

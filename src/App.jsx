@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import SocialProofStrip from './components/SocialProofStrip';
-import EligibilityBar from './components/EligibilityBar';
+import EligibilityOverview from './components/EligibilityOverview';
+import StatsStrip from './components/StatsStrip';
 import Benefits from './components/Benefits';
 import ProductCards from './components/ProductCards';
+import TaxationHighlight from './components/TaxationHighlight';
 import Repatriation from './components/Repatriation';
-import TrustStrip from './components/TrustStrip';
+import BottomBanner from './components/BottomBanner';
 import FAQLayout from './components/FAQ';
+import DisclaimerStrip from './components/DisclaimerStrip';
 import Footer from './components/Footer';
-import StickyContact from './components/StickyContact';
-import QuickQuoteForm from './components/QuickQuoteForm';
 import './index.css';
 
 function App() {
@@ -19,17 +19,17 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <SocialProofStrip />
-        <EligibilityBar />
+        <StatsStrip />
+        <EligibilityOverview />
         <Benefits />
         <ProductCards />
+        <TaxationHighlight />
         <Repatriation />
-        <TrustStrip />
+        <BottomBanner />
         <FAQLayout />
+        <DisclaimerStrip />
       </main>
       <Footer />
-      <StickyContact />
-      <QuickQuoteForm />
     </div>
   );
 }
