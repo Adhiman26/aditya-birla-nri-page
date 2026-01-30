@@ -7,11 +7,35 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: 'Verdana', sans-serif;
+  font-size: 16px;
+  /* Minimum 16px */
   color: var(--color-text-main);
   background-color: var(--color-white);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #E53935 50%, var(--color-primary) 100%);
+  background-size: 200% 100%;
+  transition: background-position 0.5s;
+}
+
+.btn-shimmer:hover {
+  animation: shimmer 2s infinite linear;
 }
 
 h1,
@@ -36,6 +60,25 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .container {

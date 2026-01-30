@@ -4,10 +4,10 @@
 }
 
 .highlightBox {
-    background-color: #FFF9E5;
-    /* Light Gold */
-    border: 1px solid #D51D25;
-    /* Cardinal Red Border */
+    background-color: rgba(245, 211, 79, 0.1);
+    /* Gold Tint */
+    border: 1px dashed var(--color-gold);
+    /* 1px Dashed Gold Border */
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg) var(--spacing-xl);
     display: flex;
@@ -19,7 +19,6 @@
 
 .iconWrapper {
     color: #B7791F;
-    /* Darker Gold/Brown for icon */
     background-color: rgba(255, 255, 255, 0.5);
     padding: 12px;
     border-radius: 50%;

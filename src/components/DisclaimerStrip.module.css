@@ -1,12 +1,17 @@
 .disclaimerSection {
-    background-color: var(--color-bg-light);
-    padding: var(--spacing-md) 0;
+    background-color: #f9fafb;
+    padding: var(--spacing-lg) 0;
     border-top: 1px solid var(--color-border);
 }
 
 .disclaimerText {
     font-size: 12px;
-    color: #999999;
+    /* 12px */
+    color: #333333;
+    /* Charcoal Grey */
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }

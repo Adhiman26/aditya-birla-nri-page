@@ -1,73 +1,203 @@
 .benefitsSection {
-    background-color: var(--color-bg-light);
-    /* Light Gray BG */
-    padding-bottom: 80px;
+    background-color: var(--color-white);
+    padding: 80px 0;
+    overflow: hidden;
+    /* For floating elements if they overlap */
+}
+
+.splitLayout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left Column */
+.leftColumn {
+    flex: 0 0 40%;
 }
 
 .heading {
-    font-size: 2.5rem;
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
     color: var(--color-text-main);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 16px;
+    line-height: 1.1;
 }
 
 .subheading {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1rem;
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: 40px;
+    line-height: 1.6;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-}
-
-.card {
-    background: var(--color-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+.benefitsList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+.listItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.checkIcon {
+    color: var(--color-primary);
+    /* Cardinal Red */
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.listText {
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* Semi-Bold */
+    color: var(--color-text-main);
+    line-height: 1.4;
+}
+
+.ctaWrapper {
+    margin-top: 20px;
+}
+
+/* Right Column */
+.rightColumn {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.bentoWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 600px;
+    /* Tall container */
+    /* border: 1px dashed red; debug */
+}
+
+.primaryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    /* Rounded corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Cards */
+.floatingCard {
+    position: absolute;
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 160px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.floatingCard:hover {
+    transform: translateY(-5px) scale(1.02);
 }
 
 .iconBox {
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
-    background-color: #FFEBEE;
-    padding: 12px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 50%;
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-main);
 }
 
-.cardTitle {
-    font-size: 1.1rem;
-    color: var(--color-text-main);
-    margin-bottom: var(--spacing-sm);
+.cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardLabel {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
     font-weight: 600;
 }
 
-.cardDesc {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.5;
+.cardValue {
+    font-family: 'Anek Latin', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text-main);
 }
 
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
+/* Card Variants */
+.cardGold {
+    background-color: #F5D34F;
+    /* Aditya Birla Gold */
+}
+
+.cardWhite {
+    background-color: #FFFFFF;
+}
+
+/* Positions */
+.pos1 {
+    top: 10%;
+    right: -20px;
+}
+
+.pos2 {
+    bottom: 25%;
+    left: -30px;
+}
+
+.pos3 {
+    bottom: 10%;
+    right: -10px;
+}
+
+@media (max-width: 968px) {
+    .splitLayout {
+        flex-direction: column;
+        gap: 40px;
     }
-}
 
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr;
+    .leftColumn,
+    .rightColumn {
+        flex: auto;
+        width: 100%;
+    }
+
+    .bentoWrapper {
+        height: 500px;
+    }
+
+    .floatingCard {
+        min-width: auto;
+        padding: 12px 16px;
+    }
+
+    .pos1 {
+        right: 0;
+    }
+
+    .pos2 {
+        left: 0;
+    }
+
+    .pos3 {
+        right: 0;
     }
 }

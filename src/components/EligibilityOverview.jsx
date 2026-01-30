@@ -1,48 +1,53 @@
 import React from 'react';
-import { Globe, User, FileText } from 'lucide-react';
 import styles from './EligibilityOverview.module.css';
+
+// Using Human-Centric Images
+import imgNRI from '../assets/eligibility_nri_human.png';
+import imgPIO from '../assets/benefit_human_family.png'; // Family for PIO (Origin)
+import imgOCI from '../assets/benefit_human_global.png'; // Passport for OCI
 
 const EligibilityOverview = () => {
     return (
         <section className={styles.eligibilitySection}>
-            <div className={`container ${styles.layout}`}>
-                {/* Column 1: Heading & Context */}
-                <div className={styles.textColumn}>
-                    <h2 className={styles.heading}>Who is Eligible?</h2>
-                    <p className={styles.subText}>
-                        Tailored solutions for global Indians to secure their family's future in India with seamless processes.
-                    </p>
-                </div>
-
-                {/* Column 2: Three-Pillar Grid */}
-                <div className={styles.iconsColumn}>
-                    <div className={styles.iconCard}>
-                        <div className={styles.iconWrapper}>
-                            <Globe size={24} />
-                        </div>
-                        <span className={styles.iconLabel}>Non-Resident<br />Indians (NRIs)</span>
-                    </div>
-
-                    <div className={styles.iconCard}>
-                        <div className={styles.iconWrapper}>
-                            <User size={24} />
-                        </div>
-                        <span className={styles.iconLabel}>Persons of<br />Indian Origin (PIOs)</span>
-                    </div>
-
-                    <div className={styles.iconCard}>
-                        <div className={styles.iconWrapper}>
-                            <FileText size={24} />
-                        </div>
-                        <span className={styles.iconLabel}>Overseas Citizens<br />of India (OCIs)</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* Regulatory Fine Print */}
             <div className="container">
+                <div className={styles.headerContainer}>
+                    <h2 className={styles.heading}>Who is Eligible?</h2>
+                </div>
+
+                <div className={styles.nodesWrapper}>
+                    {/* Golden Connector Line */}
+                    <div className={styles.connectorLine}></div>
+
+                    {/* NRI Node */}
+                    <div className={styles.nodeItem}>
+                        <div className={styles.imageWrapper}>
+                            <img src={imgNRI} alt="NRI" className={styles.humanImage} />
+                        </div>
+                        <h3 className={styles.nodeTitle}>NRI</h3>
+                        <p className={styles.nodeDesc}>Non-Resident Indian</p>
+                    </div>
+
+                    {/* PIO Node */}
+                    <div className={styles.nodeItem}>
+                        <div className={styles.imageWrapper}>
+                            <img src={imgPIO} alt="PIO" className={styles.humanImage} />
+                        </div>
+                        <h3 className={styles.nodeTitle}>PIO</h3>
+                        <p className={styles.nodeDesc}>Person of Indian Origin</p>
+                    </div>
+
+                    {/* OCI Node */}
+                    <div className={styles.nodeItem}>
+                        <div className={styles.imageWrapper}>
+                            <img src={imgOCI} alt="OCI" className={styles.humanImage} />
+                        </div>
+                        <h3 className={styles.nodeTitle}>OCI</h3>
+                        <p className={styles.nodeDesc}>Overseas Citizen of India</p>
+                    </div>
+                </div>
+
                 <div className={styles.finePrint}>
-                    NRIs residing in select countries may be eligible to purchase life insurance policies in India, subject to applicable guidelines and underwriting norms.
+                    *Eligibility is subject to country-specific underwriting norms
                 </div>
             </div>
         </section>

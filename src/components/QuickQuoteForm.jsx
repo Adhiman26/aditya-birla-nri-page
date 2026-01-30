@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
 import styles from './QuickQuoteForm.module.css';
 
 const QuickQuoteForm = () => {
@@ -12,9 +11,9 @@ const QuickQuoteForm = () => {
 
     if (isSubmitted) {
         return (
-            <div className={styles.card}>
+            <div className={styles.formContainer}>
                 <div className={styles.success}>
-                    <h3>Thank you!</h3>
+                    <h3 className={styles.heading}>Thank you!</h3>
                     <p>Our expert will contact you shortly to discuss your custom NRI plan.</p>
                 </div>
             </div>
@@ -22,39 +21,29 @@ const QuickQuoteForm = () => {
     }
 
     return (
-        <div className={styles.card}>
-            <div className={styles.header}>
-                <h3 className={styles.title}>Get a Call Back</h3>
-                <p className={styles.subtitle}>Get a customized plan today.</p>
-            </div>
+        <div className={styles.formContainer}>
+            <h3 className={styles.heading}>Quick NRI Quote</h3>
 
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.field}>
+            <form onSubmit={handleSubmit}>
+                <div className={styles.inputGroup}>
                     <input type="text" className={styles.input} placeholder="Name" required />
                 </div>
 
-                <div className={styles.phoneGroup}>
-                    <select className={styles.countryCode} defaultValue="+971">
-                         <option value="+91">+91 (IND)</option>
-                        <option value="+1">+1 (USA)</option>
-                        <option value="+44">+44 (UK)</option>
-                        <option value="+971">+971 (UAE)</option>
-                        <option value="+65">+65 (SG)</option>
-                    </select>
-                    <input type="tel" className={styles.input} placeholder="Mobile Number" required />
+                <div className={styles.inputGroup}>
+                    <input type="email" className={styles.input} placeholder="Email Address" required />
                 </div>
 
-                <div className={styles.field}>
-                    <input type="email" className={styles.input} placeholder="Email ID" required />
+                <div className={styles.inputGroup}>
+                    <input type="tel" className={styles.input} placeholder="Mobile Number (+91...)" required />
                 </div>
 
-                <div className={styles.submitWrapper}>
-                    <button type="submit" className={styles.submitBtn}>
-                        Get a Call Back
-                    </button>
-                    <p className={styles.disclaimer}>
-                        By clicking, you agree to our <a href="#">Privacy Policy</a>.
-                    </p>
+                <button type="submit" className={styles.submitButton}>
+                    Get Quote
+                </button>
+
+                <div className={styles.trustBadgeInternal}>
+                    <span className={styles.trustValue}>99.38%</span>
+                    <span className={styles.trustLabel}>Claim Settlement Ratio (Verified)</span>
                 </div>
             </form>
         </div>

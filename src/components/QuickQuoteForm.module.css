@@ -1,103 +1,80 @@
-.card {
+.formContainer {
     background: var(--color-white);
-    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    /* Stronger shadow */
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Soft 8% opacity shadow */
     width: 100%;
     max-width: 400px;
+    z-index: 10;
+    position: relative;
+    border-top: 4px solid var(--color-primary);
 }
 
-.header {
-    margin-bottom: var(--spacing-lg);
-}
-
-.title {
+.heading {
     font-size: 1.5rem;
     color: var(--color-text-main);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
-.subtitle {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.field {
-    width: 100%;
-}
-
-.phoneGroup {
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-.countryCode {
-    width: 35%;
-    padding: 12px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background-color: var(--color-bg-light);
-    font-size: 0.9rem;
+.inputGroup {
+    margin-bottom: var(--spacing-md);
 }
 
 .input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-size: 1rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
+    font-family: var(--font-body);
+    transition: border-color 0.2s;
 }
 
 .input:focus {
-    outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+    outline: none;
 }
 
-.submitWrapper {
-    margin-top: var(--spacing-sm);
-}
-
-.submitBtn {
+.submitButton {
     width: 100%;
-    padding: 14px;
     background-color: var(--color-primary);
     color: var(--color-white);
-    border-radius: var(--radius-md);
-    font-weight: 600;
+    padding: 14px;
+    border-radius: var(--radius-full);
     font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: var(--spacing-sm);
     transition: background-color 0.2s;
 }
 
-.submitBtn:hover {
+.submitButton:hover {
     background-color: var(--color-primary-dark);
 }
 
-.disclaimer {
-    font-size: 0.75rem;
-    color: var(--color-text-light);
-    text-align: center;
+.trustBadgeInternal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
 }
 
-.disclaimer a {
-    text-decoration: underline;
+.trustValue {
+    color: var(--color-gold);
+    font-weight: 700;
 }
 
-.success {
-    text-align: center;
-    padding: var(--spacing-lg) 0;
+.trustLabel {
+    color: var(--color-text-light);
 }
 
-.success h3 {
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
+@media (max-width: 600px) {
+    .formContainer {
+        padding: var(--spacing-lg);
+    }
 }
