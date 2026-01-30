@@ -30,6 +30,21 @@
     font-weight: 600;
     transition: all 0.2s;
     margin-bottom: var(--spacing-xl);
+    word-break: break-all;
+    /* Break long email */
+    max-width: 100%;
+    /* Prevent overflow */
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .emailBtn {
+        font-size: 0.9rem;
+        padding: 12px;
+        width: 100%;
+        /* Full width on small screens */
+        justify-content: center;
+    }
 }
 
 .emailBtn:hover {

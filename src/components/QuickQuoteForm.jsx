@@ -1,50 +1,58 @@
 import React, { useState } from 'react';
+import { ChevronRight, X } from 'lucide-react'; // X for close if needed, Chevron for button
 import styles from './QuickQuoteForm.module.css';
 
 const QuickQuoteForm = () => {
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsSubmitted(true);
-    };
-
-    if (isSubmitted) {
-        return (
-            <div className={styles.formContainer}>
-                <div className={styles.success}>
-                    <h3 className={styles.heading}>Thank you!</h3>
-                    <p>Our expert will contact you shortly to discuss your custom NRI plan.</p>
-                </div>
-            </div>
-        );
-    }
-
     return (
-        <div className={styles.formContainer}>
-            <h3 className={styles.heading}>Quick NRI Quote</h3>
+        <div className={styles.formCard}>
+            <div className={styles.header}>
+                <h3 className={styles.formTitle}>Quick NRI Quote</h3>
+                {/* Close icon X usually implies modal, but reference shows it in a card. We can add it visually. */}
+                <button className={styles.closeBtn}><X size={20} /></button>
+            </div>
 
-            <form onSubmit={handleSubmit}>
-                <div className={styles.inputGroup}>
-                    <input type="text" className={styles.input} placeholder="Name" required />
+            <form className={styles.formBody}>
+
+                {/* Residence Country */}
+                <div className={styles.fieldGroup}>
+                    <label className={styles.label}>Residence Country</label>
+                    <div className={styles.selectWrapper}>
+                        <select className={styles.select}>
+                            <option>Select Country</option>
+                            <option>USA</option>
+                            <option>UAE</option>
+                            <option>UK</option>
+                            <option>Singapore</option>
+                            <option>Canada</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div className={styles.inputGroup}>
-                    <input type="email" className={styles.input} placeholder="Email Address" required />
+                {/* Life Cover */}
+                <div className={styles.fieldGroup}>
+                    <label className={styles.label}>Life Cover Needed</label>
+                    <div className={styles.selectWrapper}>
+                        <select className={styles.select}>
+                            <option>Select Amount</option>
+                            <option>₹ 1 Crore</option>
+                            <option>₹ 2 Crores</option>
+                            <option>₹ 5 Crores</option>
+                            <option>₹ 10 Crores</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div className={styles.inputGroup}>
-                    <input type="tel" className={styles.input} placeholder="Mobile Number (+91...)" required />
+                {/* Contact */}
+                <div className={styles.fieldGroup}>
+                    <label className={styles.label}>Contact (Email/Phone)</label>
+                    <input type="text" className={styles.input} placeholder="Email or Phone" />
                 </div>
 
-                <button type="submit" className={styles.submitButton}>
-                    Get Quote
+                {/* Button */}
+                <button type="submit" className={styles.submitBtn}>
+                    GET QUOTE <ChevronRight size={18} />
                 </button>
 
-                <div className={styles.trustBadgeInternal}>
-                    <span className={styles.trustValue}>99.38%</span>
-                    <span className={styles.trustLabel}>Claim Settlement Ratio (Verified)</span>
-                </div>
             </form>
         </div>
     );

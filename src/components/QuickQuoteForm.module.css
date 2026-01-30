@@ -1,80 +1,116 @@
-.formContainer {
-    background: var(--color-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    /* Soft 8% opacity shadow */
-    width: 100%;
-    max-width: 400px;
-    z-index: 10;
+.formCard {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 360px;
     position: relative;
-    border-top: 4px solid var(--color-primary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: left;
+    /* Ensure content is left-aligned */
 }
 
-.heading {
-    font-size: 1.5rem;
-    color: var(--color-text-main);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f0f0f0;
+    /* Optional separator? Reference card looks clean. */
+    padding-bottom: 12px;
 }
 
-.inputGroup {
-    margin-bottom: var(--spacing-md);
+.formTitle {
+    font-family: 'Anek Latin', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
 }
 
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+.formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.select,
 .input {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    font-family: var(--font-body);
-    transition: border-color 0.2s;
-}
-
-.input:focus {
-    border-color: var(--color-primary);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    background: white;
     outline: none;
+    appearance: none;
+    /* Remove default arrow for select */
 }
 
-.submitButton {
-    width: 100%;
-    background-color: var(--color-primary);
-    color: var(--color-white);
+.selectWrapper {
+    position: relative;
+}
+
+/* Custom arrow for select */
+.selectWrapper::after {
+    content: '▼';
+    font-size: 0.7rem;
+    color: #666;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.submitBtn {
+    background-color: #D51D25;
+    /* Red */
+    color: white;
+    border: none;
     padding: 14px;
-    border-radius: var(--radius-full);
-    font-size: 1.1rem;
+    border-radius: 50px;
+    /* Pill shape or rounded rect? Reference looks rounded rect/pill. Let's go with 50px Pill for standard. form uses rounded corners mostly. Let's do 30px */
+    border-radius: 30px;
+    font-family: 'Anek Latin', sans-serif;
     font-weight: 700;
-    margin-top: var(--spacing-sm);
-    transition: background-color 0.2s;
-}
-
-.submitButton:hover {
-    background-color: var(--color-primary-dark);
-}
-
-.trustBadgeInternal {
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--color-border);
-    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: background 0.3s;
 }
 
-.trustValue {
-    color: var(--color-gold);
-    font-weight: 700;
-}
-
-.trustLabel {
-    color: var(--color-text-light);
-}
-
-@media (max-width: 600px) {
-    .formContainer {
-        padding: var(--spacing-lg);
-    }
+.submitBtn:hover {
+    background-color: #B71C1C;
 }

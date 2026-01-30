@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Shield, Wallet, Umbrella, Check } from 'lucide-react';
+import { Shield, Wallet, Umbrella, Check, Info } from 'lucide-react';
 import styles from './ProductCards.module.css';
 
 const ProductCards = () => {
-    const [accountType, setAccountType] = useState('nre'); // Default to NRE for "Premium" intent
+    const [accountType, setAccountType] = useState('nre');
 
     const products = [
         {
-            icon: <Shield size={32} />,
+            icon: <Shield size={28} />,
             title: 'Term Insurance',
             benefits: [
                 'Life cover up to ₹10 Crores',
@@ -16,7 +16,7 @@ const ProductCards = () => {
             ]
         },
         {
-            icon: <Wallet size={32} />,
+            icon: <Wallet size={28} />,
             title: 'Savings Plans',
             benefits: [
                 'Guaranteed returns',
@@ -25,7 +25,7 @@ const ProductCards = () => {
             ]
         },
         {
-            icon: <Umbrella size={32} />,
+            icon: <Umbrella size={28} />,
             title: 'Retirement Plans',
             benefits: [
                 'Secure pension for life',
@@ -61,16 +61,29 @@ const ProductCards = () => {
                     </button>
                 </div>
 
+                {/* Exclusive Tax Guidance Banner - Inserted here to match flow */}
+                {accountType === 'nre' && (
+                    <div className={styles.taxBanner}>
+                        <div className={styles.bannerContent}>
+                            <div className={styles.bannerIcon}>
+                                <Info size={20} />
+                            </div>
+                            <div className={styles.bannerText}>
+                                <strong>Exclusive Tax Guidance for NRIs</strong>
+                                <span>Get expert advice on GST exemptions and tax-free repatriation.</span>
+                            </div>
+                        </div>
+                        <button className={styles.bannerBtn}>Get Connected</button>
+                    </div>
+                )}
+
                 <div className={styles.cardsGrid}>
                     {products.map((product, index) => (
-                        <div key={index} className={`${styles.card} ${accountType === 'nre' ? styles.nreActive : ''}`}>
+                        <div key={index} className={styles.card}>
                             <div className={styles.cardHeader}>
                                 <div className={styles.iconWrapper}>
                                     {product.icon}
                                 </div>
-                                {accountType === 'nre' && (
-                                    <span className={styles.gstTag}>GST Exempt</span>
-                                )}
                             </div>
 
                             <h3 className={styles.cardTitle}>{product.title}</h3>
@@ -84,7 +97,7 @@ const ProductCards = () => {
                                 ))}
                             </ul>
 
-                            <button className={`btn-primary btn-shimmer ${styles.cardBtn}`}>
+                            <button className={styles.cardBtn}>
                                 View Plans
                             </button>
                         </div>

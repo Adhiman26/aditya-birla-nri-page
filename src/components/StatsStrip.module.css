@@ -1,64 +1,67 @@
 .statsSection {
-    background-color: var(--color-white);
-    padding: var(--spacing-lg) 0;
-    box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid var(--color-border);
+    background-color: #FFFFFF;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Allow wrapping on very small screens */
 }
 
 .statItem {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    flex: 1;
     justify-content: center;
-}
-
-.iconWrapper {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid #FFCDD2;
-    /* Light Red Border */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary);
-    background-color: #FFEBEE;
-    /* Light Red BG */
 }
 
 .content {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
-.title {
+.icon {
+    color: #D51D25;
+    /* ABC Red */
+    flex-shrink: 0;
+    /* Remove background circle for cleaner "strip" look, matches reference image usually */
+}
+
+.text {
+    font-family: 'Verdana', sans-serif;
     font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-text-main);
-}
-
-.desc {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
+    font-weight: 500;
+    color: #333333;
+    white-space: nowrap;
 }
 
 .divider {
-    width: 1px;
-    height: 40px;
-    background-color: var(--color-border);
+    width: 6px;
+    height: 6px;
+    background-color: #DDDDDD;
+    border-radius: 50%;
+    /* Dot separator */
 }
 
 @media (max-width: 768px) {
+    .statsSection {
+        padding: 16px 0;
+        /* Compact padding */
+    }
+
     .grid {
-        flex-direction: column;
-        gap: var(--spacing-lg);
+        flex-direction: row;
+        /* Keep horizontal */
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        gap: 16px 24px;
+        /* Row gap 16, Col gap 24 */
+        justify-content: center;
     }
 
     .divider {
@@ -66,8 +69,25 @@
     }
 
     .statItem {
-        width: 100%;
-        justify-content: flex-start;
-        padding-left: var(--spacing-lg);
+        flex: 0 0 auto;
+        /* Auto width */
+    }
+
+    .content {
+        gap: 8px;
+        flex-direction: row;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .text {
+        font-size: 0.8rem;
+        /* Smaller text */
+        white-space: normal;
+        /* Allow text wrap if needed */
+        text-align: left;
     }
 }

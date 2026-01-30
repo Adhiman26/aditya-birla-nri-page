@@ -1,56 +1,41 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import heroPerson from '../assets/hero_professional_person.png';
 import QuickQuoteForm from './QuickQuoteForm';
-import { ShieldCheck, Award } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
     return (
         <section className={styles.hero}>
-            <div className={`container ${styles.layout}`}>
+            <div className={`container ${styles.heroContainer}`}>
 
-                {/* Left Pane (60%) */}
-                <div className={styles.leftPane}>
-                    <div className={styles.textContent}>
+                {/* Hero Content Overlay */}
+                <div className={styles.contentWrapper}>
+
+                    {/* Left Text */}
+                    <div className={styles.textColumn}>
                         <h1 className={styles.headline}>
-                            Protect Your Family in India With <span className={styles.highlight}>Global-Standard Plans</span>
+                            Life Insurance Solutions <span className={styles.highlight}>for NRIs</span>
                         </h1>
                         <p className={styles.subheadline}>
-                            Secure your family’s future with 100% tax-free payouts and seamless global management.
+                            Secure your family’s future in India, even while living abroad.
                         </p>
-                    </div>
 
-                    <div className={styles.visualContainer}>
-                        <img src={heroPerson} alt="Professional NRI" className={styles.heroImage} />
+                        <button className={styles.heroCta}>
+                            GET A FREE NRI QUOTE
+                        </button>
 
-                        {/* Gold Trust Strip */}
-                        <div className={styles.trustStrip}>
-                            <div className={styles.trustItem}>
-                                <Award size={24} className={styles.trustIcon} />
-                                <div className={styles.trustText}>
-                                    <span className={styles.trustValue}>99.38%</span>
-                                    <span className={styles.trustLabel}>Claim Settlement Ratio</span>
-                                </div>
-                            </div>
-                            <div className={styles.divider}></div>
-                            <div className={styles.trustItem}>
-                                <ShieldCheck size={24} className={styles.trustIcon} />
-                                <div className={styles.trustText}>
-                                    <span className={styles.trustValue}>IRDAI</span>
-                                    <span className={styles.trustLabel}>Regulated</span>
-                                </div>
-                            </div>
+                        <div className={styles.claimBadge}>
+                            <span className={styles.badgeValue}>99.38%</span>
+                            <span className={styles.badgeLabel}>Claim Settlement Ratio (FY 23-24)</span>
                         </div>
                     </div>
-                </div>
 
-                {/* Right Pane (40%) */}
-                <div className={styles.rightPane}>
-                    <div className={styles.formWrapper}>
+                    {/* Right Form */}
+                    <div className={styles.formColumn}>
                         <QuickQuoteForm />
                     </div>
-                </div>
 
+                </div>
             </div>
         </section>
     );

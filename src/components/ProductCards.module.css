@@ -1,12 +1,12 @@
 .productSection {
     background-color: #FCF8F1;
-    /* Warm Beige to match other sections */
-    padding: 80px 0;
+    /* Warm Beige */
+    padding: 60px 0;
 }
 
 .headerContainer {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .heading {
@@ -14,82 +14,134 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-text-main);
-    /* Dark Text */
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .subheading {
     font-family: 'Verdana', sans-serif;
     font-size: 1rem;
-    color: var(--color-text-light);
-    /* Light Grey Text */
+    color: #555;
 }
 
 /* Toggle */
 .toggleWrapper {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 4px;
     background: #FFFFFF;
-    /* White background for toggle container */
-    padding: 6px;
+    padding: 4px;
     border-radius: 50px;
     width: fit-content;
-    margin: 0 auto 60px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    /* Subtle border */
+    margin: 0 auto 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .toggleBtn {
-    padding: 12px 32px;
+    padding: 10px 24px;
     border-radius: 40px;
     font-family: 'Anek Latin', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
-    color: var(--color-text-light);
+    font-size: 0.95rem;
+    color: #777;
     transition: all 0.3s ease;
 }
 
 .toggleBtn.active {
     background-color: var(--color-primary);
-    /* Cardinal Red */
     color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(213, 29, 37, 0.3);
+    box-shadow: 0 4px 10px rgba(213, 29, 37, 0.2);
+}
+
+/* Tax Banner - Yellow Highlight */
+.taxBanner {
+    background-color: #FFF9E5;
+    /* Light Yellow/Gold */
+    border: 1px dashed #F5D34F;
+    border-radius: 12px;
+    padding: 16px 24px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bannerIcon {
+    color: #B7791F;
+    background: rgba(245, 211, 79, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.bannerText {
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerText strong {
+    font-family: 'Anek Latin', sans-serif;
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+.bannerText span {
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.bannerBtn {
+    background: transparent;
+    color: #B7791F;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border: 2px solid #F5D34F;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.bannerBtn:hover {
+    background: #F5D34F;
+    color: #fff;
 }
 
 /* Cards Grid */
 .cardsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
 .card {
     background: #FFFFFF;
-    border-radius: 24px;
-    padding: 32px;
+    border-radius: 20px;
+    padding: 28px;
+    /* Slightly more compact */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.3s ease;
-    position: relative;
-    border: 1px solid transparent;
-    /* Prepare for border transition */
-}
-
-/* NRE Active State - Gold Glow */
-.card.nreActive {
-    box-shadow: 0 0 30px rgba(255, 249, 229, 0.3);
-    /* Soft Gold Glow */
-    border-color: #F5D34F;
-    /* Gold Border hint */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    /* Very subtle default shadow */
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .cardHeader {
@@ -97,48 +149,23 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .iconWrapper {
     color: var(--color-primary);
-    background: #F8FAFC;
-    padding: 16px;
-    border-radius: 16px;
-}
-
-.gstTag {
-    background: #FFF9E5;
-    /* Light Gold */
-    color: #B7791F;
-    /* Dark Gold Text */
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 50px;
-    border: 1px solid #F5D34F;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background: #FFF1F1;
+    /* Very light red bg */
+    padding: 14px;
+    border-radius: 12px;
 }
 
 .cardTitle {
     font-family: 'Anek Latin', sans-serif;
-    font-size: 1.25rem;
-    /* 20px */
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--color-text-main);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .benefitList {
@@ -147,34 +174,66 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     width: 100%;
+    flex-grow: 1;
+    /* Push button down */
 }
 
 .benefitItem {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     font-family: 'Verdana', sans-serif;
     font-size: 0.9rem;
-    /* 14px */
-    color: #555555;
+    color: #555;
+    line-height: 1.4;
 }
 
 .checkIcon {
     color: var(--color-primary);
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
+/* Button style from reference: Solid Red Outline or Filled? 
+   "Solid Cardinal Red Pill" was previous request. 
+   Reference usually shows clean outline or solid. Let's stick to Solid Red Pill for high conversion 
+   but make it simple. */
 .cardBtn {
     width: 100%;
-    margin-top: auto;
-    /* Push to bottom */
+    padding: 12px 0;
+    border-radius: 50px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cardBtn:hover {
+    background: #B71C1C;
+    /* Darker red */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(213, 29, 37, 0.2);
 }
 
 @media (max-width: 900px) {
     .cardsGrid {
         grid-template-columns: 1fr;
-        max-width: 500px;
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .taxBanner {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+    }
+
+    .bannerContent {
+        flex-direction: column;
     }
 }
